@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title> <%=title%>- 主页</title>
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="<%=hostname%>css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="<%=hostname%>css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="<%=hostname%>css/animate.css" rel="stylesheet">
+    <link href="<%=hostname%>css/style.css?v=4.1.0" rel="stylesheet">
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+    <div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close"><i class="fa fa-times-circle"></i>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs" style="font-size:20px;">
+                                        <img style="position:absolute;width:67px;height:34px;top:1px;left:123px" src="<%=hostname%>img/logo.jpg">
+                                        <strong class="font-bold"><%=title%></strong>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="logo-element"><%=title%>
+                        </div>
+                    </li>
+                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                    
+                    </li>
+                    <li>
+                        
+                        <a class="J_menuItem" href="<%=hostname%>admin/index_v1.html">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">系统首页</span>
+                        </a>
+                    </li>
+                    <% if(authValue.indexOf('1')!=-1||authValue.indexOf('2')!=-1||authValue.indexOf('1')!=-1){%>
+                    <li>
+                        <a class="J_menuItem" href="<%=hostname%>admin/managerManager">
+                            <i class="fa fa-user"></i>
+                            <span class="nav-label">用户管理</span>
+                        </a>
+                    </li>
+                    
+                    <%}%>
+                    
+                  
+                    <li class="line dk"></li>
+                    
+                    
+                    <% if( authValue.indexOf('4')!=-1||authValue.indexOf('5')!=-1||authValue.indexOf('6')!=-1||authValue.indexOf('7')!=-1 ){ %>
+                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                       
+                    </li>
+                    <% if( authValue.indexOf('4')!=-1||authValue.indexOf('5')!=-1 ){ %>
+                     <li>
+                        <a href="#"><i class="fa fa-medkit"></i> <span class="nav-label">权限管理</span><span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level">
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/quanxianSafe'>用户权限</a></li>
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/mokuaiSafe'>模块权限</a></li>
+                             </ul>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="<%=hostname%>admin/shopManager">
+                            <i class="fa fa-desktop"></i> 
+                            <span class="nav-label">设备管理</span>
+                            <!-- <span class="fa arrow"></span> -->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" href="<%=hostname%>admin/zichanManager">
+                            <i class="fa fa-dollar"></i>
+                            <span class="nav-label">资产管理</span>
+                        </a>
+                    </li>
+                     <%}%>
+                     <li class="line dk"></li>
+                      <% if( authValue.indexOf('4')!=-1||authValue.indexOf('5')!=-1 ){ %>
+                         <li>
+                            <a href="<%=hostname%>admin/shopManager"><i class="fa fa-users"></i><span class="nav-label">人力资源</span><span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level">
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/dakaState'>在线打卡</a></li>
+                                
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/xinziState'>薪资管理</a></li>
+                             
+                             </ul>
+                        
+                        </li>
+                        <li>
+                            <a class="J_menuItem" href="<%=hostname%>admin/rongqiManager">
+                                <i class="fa fa-database"></i>
+                                <span class="nav-label">容器管理</span>
+                            
+                            </a>
+                        </li>
+
+                    <%}%>
+                    <li class="line dk"></li>
+                    <%}%>
+                    
+
+                    <% if( authValue.indexOf('8')!=-1||authValue.indexOf('9')!=-1||authValue.indexOf('10')!=-1){ %> 
+                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                        
+                    </li>
+                   
+                    <li>
+                        <a href="#"><i class="fa fa-dollar"></i> <span class="nav-label">财务管理</span><span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level">
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/baoxiaoMoney'>在线报销</a></li>
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/invoiceMoney'>单据管理</a></li>
+                             </ul>
+                    </li>
+                       <li>
+                        <a href="#"><i class="fa fa-medkit"></i> <span class="nav-label">安全管理</span><span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level">
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/renlianSafe'>人脸识别</a></li>
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/shipinSafe'>视频会议</a></li>
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/fingerEnter'>指纹录入</a></li>
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/zhiwenSafe'>指纹管理</a></li>
+                                
+
+                             </ul>
+                    </li>
+                    
+                 <%}%>
+                     <li class="line dk"></li>
+                      <% if( authValue.indexOf('8')!=-1||authValue.indexOf('9')!=-1||authValue.indexOf('10')!=-1){ %> 
+                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                        
+                    </li>
+                       <li>
+                        <a href="#"><i class="fa fa-opera"></i> <span class="nav-label">后勤管理 </span><span class="fa arrow"></span></a>
+                             <ul class="nav nav-second-level">
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/fingerTx'>指纹打车</a></li>
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/useCar'>用车申请</a></li>
+                                <li><a class='J_menuItem' href='<%=hostname%>admin/locationCar'>车辆定位</a></li>
+                                 <li><a class='J_menuItem' href='<%=hostname%>admin/locationManager'>定位管理</a></li>
+                                 <li><a class='J_menuItem' href='<%=hostname%>admin/recordCar'>行车记录</a></li>
+
+                             </ul>
+                    </li>
+                    
+                 <%}%>
+                  <li class="line dk"></li>
+                   <% if( authValue.indexOf('8')!=-1||authValue.indexOf('9')!=-1||authValue.indexOf('10')!=-1){ %> 
+                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                       
+                    </li>
+                
+                    <li>
+                        <a class="J_menuItem" href="<%=hostname%>admin/explainManager">
+                            <i class="fa fa-file-text"></i> 
+                            <span class="nav-label">说明</span>
+                          
+                        </a>
+                    </li>
+                    
+                <%}%>
+
+                </ul>
+            </div>
+        </nav>
+        <!--左侧导航结束-->
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-info " href="#"><i class="fa fa-bars"></i> </a>
+                        <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
+                            <div class="form-group">
+                               
+                                <h1 style="margin-top:13px;">矩阵企管通</h1>
+                            </div>
+                        </form>
+                    </div>
+                  
+                </nav>
+            </div>
+            <div class="row J_mainContent" id="content-main">
+                
+                <iframe id="J_iframe" width="100%" height="100%" src="<%=hostname%>admin/index_v1.html" frameborder="0" data-id="index_v1.html" seamless></iframe>
+            </div>
+        </div>
+        <!--右侧部分结束-->
+    </div>
+
+    <!-- 全局js -->
+    <script src="<%=hostname%>js/jquery.min.js?v=2.1.4"></script>
+    <script src="<%=hostname%>js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="<%=hostname%>js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="<%=hostname%>js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="<%=hostname%>js/plugins/layer/layer.min.js"></script>
+
+    <!-- 自定义js -->
+    <script src="<%=hostname%>js/hAdmin.js?v=4.1.0"></script>
+    <script type="text/javascript" src="<%=hostname%>js/index.js"></script>
+
+
+
+</body>
+
+</html>

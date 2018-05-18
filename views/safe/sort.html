@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+function sortNumber(a,b)
+{
+return b - a
+}
+
+var arr = new Array(6)
+arr[0] = "10"
+arr[1] = "5"
+arr[2] = "40"
+arr[3] = "25"
+arr[4] = "1000"
+arr[5] = "1"
+
+document.write(arr + "<br />")
+document.write(arr.sort(sortNumber))
+
+
+var arr = [
+    {name:'zopp',age:0},
+    {name:'gpp',age:18.2},
+    {name:'yjj',age:8.1}
+];
+
+function compare(property){
+    return function(a,b){
+        var value1 = a[property];
+        var value2 = b[property];
+        return value1 - value2;
+    }
+}
+console.log(arr.sort(compare('age')))
+
+</script>
+
+
+
+</body>
+</html>
